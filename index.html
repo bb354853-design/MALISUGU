@@ -1,81 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MALI SUGU - Marché en ligne</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087b45">
+  <meta name="description" content="MALI SUGU, votre espace de vente et d'achat au Mali.">
+  <title>MALI SUGU — Achetez et vendez au Mali</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-    }
-
-    header {
-      background: #0b8f55;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 32px;
-    }
-
-    header p {
-      margin-top: 8px;
-    }
-
-    .search {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .search input {
-      width: 90%;
-      max-width: 500px;
-      padding: 14px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
-      background: white;
-    }
-
-    .hero h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      margin-bottom: 25px;
-      color: #555;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #0b8f55;
-      color: white;
-      padding: 14px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .categories {
-     
-}</style></head><body>
-<h1>Bienvenue sur MALI SUGU 🇲🇱</h1>
-<p>Notre site fonctionne.</p>
-</body></html>
+    :root { --green:#087b45; --dark:#065d35; --gold:#f5b926; --text:#193326; --gray:#53675b; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#f4f7f3; color:var(--text); font-family:Arial,sans-serif; }
+    .wrap { width:min(100% - 32px,1000px); margin:auto; }
+    a { color:inherit; text-decoration:none; }
+    header { background:white; box-shadow:0 2px 12px #123a2018; }
+    header .wrap { min-height:70px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand { color:var(--dark); font-size:1.3rem; font-weight:900; }
+    nav { display:flex; gap:18px; font-weight:700; font-size:.92rem; }
+    nav a:hover,nav a:focus-visible { color:var(--green); text-decoration:underline; }
+    .hero { padding:65px 0 72px; color:white; background:linear-gradient(130deg,#075f38,#0a9752); }
+    h1 { max-width:700px; margin:0 0 14px; font-size:clamp(2rem,5vw,3.4rem); line-height:1.1; }
+    .hero p { max-width:550px; margin:0 0 26px; line-height:1.6; font-size:1.1rem; }
+    .search { max-width:600px; display:flex; padding:6px; border-radius:13px; background:white; box-shadow:0 10px 25px #00402333; }
+    .search input { flex:1; min-width:0; padding:12px; border:0; outline:0; border-radius:9px; font:inherit; }
+    .search button { border:0; border-radius:9px; background:var(--gold); color:#302407; padding:12px 17px; font:inherit; font-weight:800; cursor:pointer; }
+    .search button:hover { background:#ffd562; }
+    main { padding:36px 0 60px; }
+    h2 { margin:0 0 10px; font-size:1.55rem; }
+    .intro { margin:0 0 22px; color:var(--gray); line-height:1.5; }
+    .categories { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .category { min-height:90px; display:flex; align-items:center; gap:12px; padding:15px; background:white; border:1px solid #e3ebe4; border-radius:15px; box-shadow:0 3px 12px #183a2310; font-weight:700; }
+    .category span { font-size:2rem; }
+    #annonces { margin-top:42px; }
+    .empty { padding:38px 24px; border:1px solid #e3ebe4; border-radius:17px; background:white; text-align:center; }
+    .empty .icon { font-size:2.5rem; }
+    .empty h3 { margin:8px 0; }
+    .empty p { max-width:500px; margin:auto; color:var(--gray); line-height:1.6; }
+    .about { margin-top:24px; padding:27px; border-radius:17px; background:#e1f1e8; }
+    .about p { margin:0; line-height:1.6; }
+    footer { padding:23px 0; background:#123d2a; color:white; text-align:center; font-size:.9rem; }
+    @media(max-width:700px) { .hero { padding:48px 0 57px; } .categories { grid-template-columns:repeat(2,1fr); } .category { min-height:82px; padding:12px; font-size:.9rem; } nav { gap:10px; font-size:.8rem; } .brand { font-size:1.1rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#accueil">🇲🇱 MALI SUGU</a>
+      <nav aria-label="Navigation principale"><a href="#categories">Catégories</a><a href="#annonces">Annonces</a></nav>
+    </div>
+  </header>
+  <section class="hero" id="accueil">
+    <div class="wrap">
+      <h1>Bienvenue sur MALI SUGU 🇲🇱</h1>
+      <p>Un espace pour découvrir, acheter et vendre au Mali.</p>
+      <form class="search" id="search-form" role="search">
+        <input id="search-input" type="search" aria-label="Rechercher une annonce" placeholder="Que recherchez-vous ?">
+        <button type="submit">Rechercher</button>
+      </form>
+    </div>
+  </section>
+  <main class="wrap">
+    <section id="categories" aria-labelledby="categories-title">
+      <h2 id="categories-title">Explorez les catégories</h2>
+      <p class="intro">Retrouvez bientôt les annonces qui vous intéressent.</p>
+      <div class="categories">
+        <div class="category"><span aria-hidden="true">👗</span>Mode</div>
+        <div class="category"><span aria-hidden="true">📱</span>Électronique</div>
+        <div class="category"><span aria-hidden="true">🏠</span>Maison</div>
+        <div class="category"><span aria-hidden="true">🛠️</span>Construction</div>
+        <div class="category"><span aria-hidden="true">🚗</span>Véhicules</div>
+        <div class="category"><span aria-hidden="true">🥭</span>Alimentation</div>
+        <div class="category"><span aria-hidden="true">💄</span>Beauté</div>
+        <div class="category"><span aria-hidden="true">📦</span>Autres</div>
+      </div>
+    </section>
+    <section id="annonces" aria-labelledby="annonces-title">
+      <h2 id="annonces-title">Annonces</h2>
+      <div class="empty" role="status">
+        <div class="icon" aria-hidden="true">🛍️</div>
+        <h3 id="empty-title">Les annonces arrivent bientôt</h3>
+        <p id="empty-text">La boutique est en préparation. Revenez bientôt pour découvrir les premiers produits.</p>
+      </div>
+    </section>
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">MALI SUGU, pour tous les Maliens</h2>
+      <p>Cette page est en construction. Les annonces, les informations des vendeurs et les moyens de commande seront ajoutés prochainement.</p>
+    </section>
+  </main>
+  <footer><div class="wrap">© 2026 MALI SUGU 🇲🇱</div></footer>
+  <script>
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const term = document.getElementById('search-input').value.trim();
+      document.getElementById('empty-title').textContent = term ? 'Aucune annonce pour « ' + term + ' »' : 'Les annonces arrivent bientôt';
+      document.getElementById('empty-text').textContent = term ? 'Les annonces ne sont pas encore disponibles. Revenez bientôt.' : 'La boutique est en préparation. Revenez bientôt pour découvrir les premiers produits.';
+      document.getElementById('annonces').scrollIntoView({behavior:'smooth'});
+    });
+  </script>
+</body>
+</html>
